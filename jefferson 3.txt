@@ -1,0 +1,160 @@
+QUESTAO 1
+package com.mycompany.atividade1;
+
+import java.util.Scanner;
+
+public class Atividade1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int[] idades = new int[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("informe as idades");
+            idades[i] = ler.nextInt();
+        }
+
+        for (int i = 0; i < 3 - 1; i++) {
+            for (int j = 0; j < 3 - 1 - i; j++) {
+                if (idades[j] > idades[j + 1]) {
+                    int aux = idades[j];
+                    idades[j] = idades[j + 1];
+                    idades[j + 1] = aux;
+                }
+            }
+        }
+
+        System.out.println(" a idade de camile e:" + idades[1]);
+    }
+}
+
+
+QUESTAO 2
+package com.mycompany.atividade1;
+
+import java.util.Scanner;
+
+public class Atividade1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int vit = 0;
+
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Informe o resultado:");
+            String resultado = ler.next();
+
+            if (resultado.equals("v")) {
+                vit++;
+            }
+        }
+
+        if (vit == 5 || vit == 6) {
+            System.out.println(1);
+        } else if (vit == 3 || vit == 4) {
+            System.out.println(2);
+        } else if (vit == 1 || vit == 2) {
+            System.out.println(1);
+        } else {
+            System.out.println(-1);
+        }
+    }
+}
+
+
+QUESTAO 3
+package com.mycompany.atividade1;
+
+import java.util.Scanner;
+
+public class Atividade1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int A,S,B;
+        int quant = 0;
+
+        System.out.println("informe a soma dos digitos:");
+        S = ler.nextInt();
+        System.out.println("informe o inicio do intervalo:");
+        A = ler.nextInt();
+        System.out.println("informe o fim do intervalo:");
+        B = ler.nextInt();
+
+        for (int i = A; i <= B; i++) {
+            int numero = i;
+            int soma = 0;
+
+            while (numero > 0) {
+                soma += numero % 10;
+                numero /= 10;
+            }
+
+            if (soma == S) {
+                quant++;
+            }
+        }
+
+        System.out.println("resultado:" + quant);
+    }
+}
+
+
+QUESTAO 4
+package com.mycompany.atividade1;
+
+import java.util.Scanner;
+
+public class Atividade1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int n;
+        int quant;
+
+        System.out.println("informe o valor de N:");
+        n = ler.nextInt();
+
+        quant = (n + 1)*(n + 2)/2;
+
+         System.out.println("resultado:" + quant);
+    }
+}
+
+
+QUESTAO 5
+package com.mycompany.atividade1;
+
+import java.util.Scanner;
+
+public class Atividade1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int N1,D1,V1;
+        int N2,D2,V2;
+        double tempo1,tempo2;
+
+        System.out.println("informe o numero da primeira charrete:");
+        N1 = ler.nextInt();
+        System.out.println("informe a distancia da primeira charrete:");
+        D1 = ler.nextInt();
+        System.out.println("informe a velocidade da primeira charrete:");
+        V1 = ler.nextInt();
+
+        System.out.println("informe o numero da segunda charrete:");
+        N2 = ler.nextInt();
+        System.out.println("informe a distancia da segunda charrete:");
+        D2 = ler.nextInt();
+        System.out.println("informe a velocidade da segunda charrete:");
+        V2 = ler.nextInt();
+
+        tempo1 = (double) D1 / (V1 * 1000);
+        tempo2 = (double) D2 / (V2 * 1000);
+
+        if (tempo1 < tempo2) {
+            System.out.println("vencedora: " + N1);
+        } else {
+            System.out.println("vencedora: " + N2);
+        }
+    }
+}
